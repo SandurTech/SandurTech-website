@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Sitemap: https://sandurtech.vercel.app/sitemap.xml
+
+# Performance focused spider rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: CCBot
+Allow: /

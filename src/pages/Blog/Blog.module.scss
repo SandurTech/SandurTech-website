@@ -1,0 +1,46 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.blogPage {
+  min-height: 80vh;
+  @include flex-center;
+}
+
+.comingSoon {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -2px;
+
+    span {
+      @include text-gradient;
+    }
+  }
+
+  p {
+    font-size: 1.25rem;
+    color: $theme-text-muted;
+    margin-bottom: 3rem;
+  }
+}
+
+.backBtn {
+  @include flex-center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: $theme-text;
+  color: $theme-bg;
+  border-radius: 50px;
+  font-weight: 600;
+  
+  &:hover {
+    transform: translateY(-3px);
+    background-color: $color-accent;
+    color: white; // High contrast on hover
+  }
+}

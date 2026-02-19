@@ -1,0 +1,94 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  @include glass;
+  z-index: 1000;
+
+  .container {
+    @include flex-center;
+    justify-content: space-between;
+    height: 80px;
+  }
+}
+
+.logo {
+  @include flex-center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: $theme-text;
+
+  img {
+    height: 40px;
+    width: auto;
+  }
+
+  span {
+    letter-spacing: -1px;
+    
+    strong {
+      color: $color-accent;
+    }
+  }
+}
+
+.nav {
+  display: flex;
+  gap: 2.5rem;
+
+  @include respond-to("laptop") {
+    display: none;
+  }
+
+  a {
+    font-weight: 600;
+    color: $theme-text-muted;
+    font-size: 0.95rem;
+
+    &:hover {
+      color: $color-accent;
+    }
+
+    &.active {
+      color: $theme-text;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  @include respond-to("laptop") {
+    display: none;
+  }
+}
+
+.cta {
+  background-color: $theme-text;
+  color: $theme-bg;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  
+  &:hover {
+    background-color: $color-accent;
+    color: white;
+    transform: translateY(-2px);
+  }
+}
+
+.menuButton {
+  display: none;
+  color: $theme-text;
+  
+  @include respond-to("laptop") {
+    display: block;
+  }
+}

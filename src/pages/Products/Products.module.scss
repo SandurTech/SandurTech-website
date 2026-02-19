@@ -1,0 +1,179 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.productsPage {
+  padding-bottom: 4rem;
+}
+
+.hero {
+  padding: 6rem 0 3rem;
+  text-align: center;
+  
+  h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+    letter-spacing: -1.5px;
+
+    span {
+      @include text-gradient;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: $theme-text-muted;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+}
+
+.listingSection {
+  padding: 1.5rem 0;
+}
+
+.controlsRow {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  align-items: center;
+  justify-content: center;
+
+  @include respond-to("tablet") {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.searchContainer {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+  
+  span {
+    position: absolute;
+    left: 1.1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $theme-text-muted;
+    font-size: 1.2rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 0.85rem 1.1rem 0.85rem 3rem;
+    border-radius: 12px;
+    border: 1px solid $theme-border;
+    background-color: $theme-surface;
+    color: $theme-text;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: $transition;
+
+    &:focus {
+      outline: none;
+      border-color: $color-accent;
+      box-shadow: 0 0 15px $color-accent-soft;
+    }
+  }
+}
+
+.dropdownContainer {
+  position: relative;
+  width: 220px;
+
+  @include respond-to("tablet") {
+    width: 100%;
+  }
+}
+
+.dropdownToggle {
+  width: 100%;
+  @include flex-center;
+  justify-content: space-between;
+  padding: 0.85rem 1.25rem;
+  background-color: $theme-surface;
+  border: 1px solid $theme-border;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: $transition;
+
+  &:hover {
+    border-color: $color-accent;
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background-color: $theme-surface;
+  border: 1px solid $theme-border;
+  border-radius: 12px;
+  box-shadow: $shadow-md;
+  z-index: 100;
+  padding: 0.5rem;
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+.dropdownItem {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: $transition;
+
+  &:hover {
+    background-color: $theme-surface-variant;
+    color: $color-accent;
+  }
+
+  &.active {
+    background: $gradient-brand;
+    color: white;
+  }
+}
+
+.noResults {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: $theme-surface;
+  border-radius: 20px;
+  border: 1px solid $theme-border;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: $theme-text-muted;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+
+.optimisticIcon {
+  width: 70px;
+  height: 70px;
+  background-color: $color-accent-soft;
+  border-radius: 50%;
+  @include flex-center;
+  margin: 0 auto 1.5rem;
+  
+  span {
+    font-size: 2.2rem;
+    color: $color-accent;
+  }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

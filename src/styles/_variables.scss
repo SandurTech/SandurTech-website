@@ -1,0 +1,51 @@
+@use "sass:color";
+
+// ==========================================
+// 🎨 CORE BRAND PALETTE (The 3 User Colors)
+// ==========================================
+$color-accent: orange;
+$color-primary: #262626;   // Dark Slate/Charcoal
+$color-secondary: #F2F2F2; // Light Gray/Silver
+
+// ==========================================
+// 🛠️ DERIVED COLORS (SCSS Ecosystem)
+// ==========================================
+$color-accent-dark: darken($color-accent, 10%);
+$color-accent-soft: rgba($color-accent, 0.1);
+$color-accent-glow: rgba($color-accent, 0.3);
+
+$color-primary-light: lighten($color-primary, 15%);
+$color-primary-muted: rgba($color-primary, 0.6);
+
+$color-secondary-dark: darken($color-secondary, 5%);
+$color-secondary-light: #FFFFFF;
+
+// ==========================================
+// 🌓 DYNAMIC THEME TOKENS
+// ==========================================
+// These map to CSS variables to enable the dynamic theme toggle 
+// while keeping modules "SCSS-only" in feeling.
+
+$theme-bg: var(--theme-bg);
+$theme-surface: var(--theme-surface);
+$theme-surface-variant: var(--theme-surface-variant);
+$theme-text: var(--theme-text);
+$theme-text-muted: var(--theme-text-muted);
+$theme-border: var(--theme-border);
+$theme-footer-bg: var(--theme-footer-bg);
+$theme-footer-text: var(--theme-footer-text);
+
+// ==========================================
+// ⚙️ DESIGN SYSTEM CONSTANTS
+// ==========================================
+$font-main: 'Outfit', 'Inter', system-ui, -apple-system, sans-serif;
+$transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+$border-radius: 20px;
+$container-width: 1100px;
+
+$shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.05);
+$shadow-md: 0 12px 30px rgba(0, 0, 0, 0.1);
+$glow: 0 8px 20px $color-accent-glow;
+
+$gradient-brand: linear-gradient(135deg, $color-accent 0%, $color-accent-dark 100%);
+$gradient-hero: linear-gradient(to bottom, var(--theme-surface-variant) 0%, var(--theme-bg) 85%, var(--theme-bg) 100%);
