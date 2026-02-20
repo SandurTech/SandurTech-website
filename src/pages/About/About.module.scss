@@ -27,10 +27,15 @@
   }
 
   h1 {
-    font-size: 3.2rem;
+    font-size: clamp(2.2rem, 10vw, 3.2rem);
     font-weight: 850;
     margin-bottom: 0.75rem;
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
+
+    @include respond-to("mobile") {
+      font-size: 2.2rem;
+      letter-spacing: -1px;
+    }
 
     span {
       @include text-gradient;
@@ -43,6 +48,10 @@
     max-width: 500px;
     margin: 0 auto;
     font-weight: 500;
+
+    @include respond-to("mobile") {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -58,6 +67,10 @@
   @include respond-to("laptop") {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+
+  @include respond-to("mobile") {
+    gap: 2rem;
   }
 }
 
@@ -96,7 +109,9 @@
   padding: 2.25rem;
   border-radius: $border-radius;
   border: 1px solid $theme-border;
-  box-shadow: $shadow-sm;
+  @include respond-to("mobile") {
+    padding: 1.5rem;
+  }
 
   h3 {
     font-size: 1.4rem;

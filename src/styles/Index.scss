@@ -1,7 +1,5 @@
 @import 'variables';
 @import 'mixins';
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
 
 // ==========================================
 // 🌚 THEME ENGINE
@@ -52,9 +50,6 @@
 // High-Performance Smooth Transition for Theme Switch
 html {
   transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  &[data-theme='dark'] {
-    // Optional: add a subtle glow update if needed
-  }
 }
 
 body {
@@ -68,13 +63,14 @@ body {
   transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-// Apply transition to all themed elements
-header, footer, aside, section, div, button, nav, a, p, h1, h2, h3, h4, span, input {
-  transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
-              border-color 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
-              color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              backdrop-filter 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+// Apply transitions only to background and color for performance
+header, footer, aside, section, .card, .container {
+  transition: background-color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              border-color 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+button, a, p, h1, h2, h3, h4, span {
+  transition: color 0.4s ease, background-color 0.4s ease, transform 0.4s ease, opacity 0.4s ease;
 }
 
 a {

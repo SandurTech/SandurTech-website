@@ -2,6 +2,9 @@ import { Link } from "react-router-dom";
 import styles from "./Sidebar.module.scss";
 import { companyLinks } from "../../data/socials";
 
+import ThemeToggle from "../ThemeToggle";
+import SocialIcon from "../../components/SocialIcon";
+
 export default function Sidebar({ isOpen, onClose }) {
     return (
         <>
@@ -15,13 +18,16 @@ export default function Sidebar({ isOpen, onClose }) {
                     <div className={styles.sidebarLogo}>
                         Sandur<strong>Tech</strong>
                     </div>
-                    <button 
-                        className={styles.closeBtn} 
-                        onClick={onClose}
-                        aria-label="Close menu"
-                    >
-                        <span className="material-symbols-rounded">close</span>
-                    </button>
+                    <div className={styles.topActions}>
+                        <ThemeToggle />
+                        <button 
+                            className={styles.closeBtn} 
+                            onClick={onClose}
+                            aria-label="Close menu"
+                        >
+                            <span className="material-symbols-rounded">close</span>
+                        </button>
+                    </div>
                 </div>
                 
                 <nav className={styles.links}>
@@ -38,7 +44,8 @@ export default function Sidebar({ isOpen, onClose }) {
                             onClick={onClose}
                             className={styles.sidebarCta}
                         >
-                            GitHub Portfolio
+                            <SocialIcon platform="github" />
+                            <span>GitHub Portfolio</span>
                         </a>
                     </div>
                 </nav>

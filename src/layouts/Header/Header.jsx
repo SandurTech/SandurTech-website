@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Header.module.scss";
 import ThemeToggle from "../ThemeToggle";
+import SocialIcon from "../../components/SocialIcon";
 import { companyLinks } from "../../data/socials";
 
 export default function Header({ onMenuClick }) {
@@ -10,7 +11,14 @@ export default function Header({ onMenuClick }) {
         <header className={styles.header}>
             <div className={`container ${styles.container}`}>
                 <Link to="/" className={styles.logo}>
-                    <img src="/images/SandurTech-Logo-SVG.svg" alt="SandurTech Logo" loading="lazy" draggable="false" />
+                    <img 
+                        src="/images/SandurTech-Logo-SVG.svg" 
+                        alt="SandurTech Logo" 
+                        width="40" 
+                        height="40" 
+                        fetchpriority="high"
+                        draggable="false" 
+                    />
                     <span>Sandur<strong>Tech</strong></span>
                 </Link>
                 
@@ -24,7 +32,8 @@ export default function Header({ onMenuClick }) {
                 <div className={styles.actions}>
                     <ThemeToggle />
                     <a href={companyLinks.github} target="_blank" rel="noopener noreferrer" className={styles.cta}>
-                        GitHub
+                        <SocialIcon platform="github" />
+                        <span>GitHub</span>
                     </a>
                 </div>
 

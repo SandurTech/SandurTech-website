@@ -11,7 +11,14 @@ export default function About() {
       <section className={styles.hero}>
         <div className="container">
           <div className={styles.avatar}>
-            <img src="/images/SandurTech-Logo-PNG.png" alt="Founder Icon" loading="lazy" draggable="false" />
+            <img 
+              src="/images/SandurTech-Logo-PNG.png" 
+              alt="SandurTech Founder" 
+              width="80" 
+              height="80" 
+              fetchpriority="high"
+              draggable="false" 
+            />
           </div>
           <h1>About Sandur<span>Tech</span></h1>
           <p>Founded {companyInfo.founded}. From a solo hustle to a pursuit of digital elegance.</p>

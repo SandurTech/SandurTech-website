@@ -74,7 +74,14 @@ export default function Products() {
             {filteredProducts.map(product => (
               <div key={product.id} className={mainStyles.projectCard}>
                 <div className={mainStyles.projectImage}>
-                  <img src={product.image} alt={product.name} loading="lazy" draggable="false" />
+                  <img 
+                    src={product.image} 
+                    alt={product.name} 
+                    width="400" 
+                    height="250" 
+                    loading="lazy" 
+                    draggable="false" 
+                  />
                 </div>
                 <div className={mainStyles.projectContent}>
                   <div className={mainStyles.projectTags}>

@@ -9,6 +9,7 @@ export default function Home() {
     <div className={styles.main}>
       {/* Hero Section */}
       <section className={styles.hero}>
+        <div className={styles.heroGlow}></div>
         <div className="container">
           <div className={styles.heroInner}>
             <h1>
@@ -42,7 +43,14 @@ export default function Home() {
             {featuredProducts.map(product => (
               <div key={product.id} className={styles.projectCard}>
                 <div className={styles.projectImage}>
-                  <img src={product.image} alt={product.name} loading="lazy" draggable="false" />
+                  <img 
+                    src={product.image} 
+                    alt={product.name} 
+                    width="400"
+                    height="250"
+                    loading="lazy" 
+                    draggable="false" 
+                  />
                 </div>
                 <div className={styles.projectContent}>
                   <div className={styles.projectTags}>

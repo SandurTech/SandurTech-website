@@ -47,6 +47,7 @@
 
     img {
       height: 56px;
+      width: 56px;
       filter: drop-shadow(0 0 10px rgba($color-accent, 0.2));
     }
     
@@ -56,7 +57,7 @@
   }
 
   p {
-    color: rgba(255, 255, 255, 0.55);
+    color: rgba(255, 255, 255, 0.7);
     line-height: 1.7;
     font-size: 1.1rem;
     font-weight: 500;
@@ -88,7 +89,7 @@
     gap: 1rem;
 
     a {
-      color: rgba(255, 255, 255, 0.45);
+      color: rgba(255, 255, 255, 0.75);
       font-size: 1.05rem;
       font-weight: 600;
       transition: $transition;
@@ -138,9 +139,14 @@
   opacity: 1;
 
   @include respond-to("tablet") {
-    font-size: clamp(3.5rem, 22vw, 12rem);
-    opacity: 0.8;
-    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.12);
+    font-size: clamp(2.5rem, 18vw, 9rem);
+    opacity: 0.7;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
+  }
+
+  @include respond-to("mobile") {
+    font-size: clamp(2rem, 20vw, 7rem);
+    letter-spacing: -0.04em;
   }
 }
 
@@ -150,7 +156,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.6);
   font-size: 1rem;
   position: relative;
   z-index: 10;

@@ -38,7 +38,14 @@ export default function Footer() {
                 <div className={styles.top}>
                     <div className={styles.brand}>
                         <Link to="/" className={styles.logo} title="SandurTech Home">
-                            <img src="/images/SandurTech-Logo-SVG.svg" alt="SandurTech Logo" loading="lazy" draggable="false" />
+                            <img 
+                                src="/images/SandurTech-Logo-SVG.svg" 
+                                alt="SandurTech Logo" 
+                                width="56"
+                                height="56"
+                                loading="lazy" 
+                                draggable="false" 
+                            />
                             <span>Sandur<strong>Tech</strong></span>
                         </Link>
                         <p>{companyInfo.description}</p>

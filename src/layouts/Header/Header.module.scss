@@ -24,7 +24,7 @@
 
   img {
     height: 40px;
-    width: auto;
+    width: 40px;
   }
 
   span {
@@ -70,17 +70,26 @@
 }
 
 .cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
   background-color: $theme-text;
   color: $theme-bg;
   padding: 0.6rem 1.4rem;
   border-radius: 50px;
   font-weight: 700;
   font-size: 0.9rem;
+  transition: $transition;
   
   &:hover {
     background-color: $color-accent;
     color: white;
     transform: translateY(-2px);
+    box-shadow: $glow;
+  }
+
+  svg {
+    font-size: 1.1rem;
   }
 }
 
