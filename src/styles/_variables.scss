@@ -10,14 +10,14 @@ $color-secondary: #F2F2F2; // Light Gray/Silver
 // ==========================================
 // 🛠️ DERIVED COLORS (SCSS Ecosystem)
 // ==========================================
-$color-accent-dark: darken($color-accent, 10%);
+$color-accent-dark: color.adjust($color-accent, $lightness: -10%);
 $color-accent-soft: rgba($color-accent, 0.1);
 $color-accent-glow: rgba($color-accent, 0.3);
 
-$color-primary-light: lighten($color-primary, 15%);
+$color-primary-light: color.adjust($color-primary, $lightness: 15%);
 $color-primary-muted: rgba($color-primary, 0.6);
 
-$color-secondary-dark: darken($color-secondary, 5%);
+$color-secondary-dark: color.adjust($color-secondary, $lightness: -5%);
 $color-secondary-light: #FFFFFF;
 
 // ==========================================

@@ -86,6 +86,7 @@ export default function Products() {
                 <div className={mainStyles.projectContent}>
                   <div className={mainStyles.projectTags}>
                     <span>{product.category}</span>
+                    <span>{product.status}</span>
                   </div>
                   <h3>{product.name}</h3>
                   <p>{product.description}</p>

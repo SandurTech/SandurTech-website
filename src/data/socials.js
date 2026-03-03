@@ -1,5 +1,5 @@
 export const socials = [
-  { name: 'GitHub', platform: 'github', url: 'https://github.com/amogharajsandur', color: '#181717' },
+  { name: 'GitHub', platform: 'github', url: 'https://github.com/SandurTech', color: '#181717' },
   { name: 'LinkedIn', platform: 'linkedin', url: 'https://www.linkedin.com/in/amogharajsandur/', color: '#0077b5' },
   { name: 'Instagram', platform: 'instagram', url: 'https://www.instagram.com/amogharajsandur/', color: '#E4405F' },
   { name: 'YouTube', platform: 'youtube', url: 'https://www.youtube.com/@amogharajsandur', color: '#FF0000' },
@@ -9,8 +9,8 @@ export const socials = [
 ];
 
 export const companyLinks = {
-  github: "https://github.com/amogharajsandur",
-  // github: "https://github.com/SandurTech",
+  // github: "https://github.com/amogharajsandur",
+  github: "https://github.com/SandurTech",
   googleBusiness: "https://g.page/r/Cfu4mEsl3obZEAI/review",
   email: "amogharaj.sandur@yahoo.com",
 };

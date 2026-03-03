@@ -1,14 +1,35 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Home.module.scss';
 import { products } from '../../data/products';
+import { heroSlides } from '../../data/hero';
 
 export default function Home() {
   const featuredProducts = products.filter(p => p.featured).slice(0, 2);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
     <div className={styles.main}>
       {/* Hero Section */}
       <section className={styles.hero}>
+        <div className={styles.heroCarousel}>
+          {heroSlides.map((slide, index) => (
+            <div 
+              key={slide.id}
+              className={`${styles.slide} ${index === currentSlide ? styles.active : ''}`}
+              style={{ backgroundImage: `url(${slide.image})` }}
+            />
+          ))}
+          <div className={styles.overlay} />
+        </div>
+        
         <div className={styles.heroGlow}></div>
         <div className="container">
           <div className={styles.heroInner}>

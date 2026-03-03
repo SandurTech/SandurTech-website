@@ -10,7 +10,8 @@ export const products = [
       demo: "https://bulk-barcode-generator.vercel.app/", 
       code: "https://github.com/amogharajsandur/bulk-barcode-generator" 
     },
-    featured: true
+    featured: true,
+    status: "Released"
   },
   {
     id: 2,
@@ -22,8 +23,22 @@ export const products = [
     links: { 
       code: "https://github.com/amogharajsandur/project-templates/" 
     },
-    featured: true
-  }
+    featured: true,
+    status: "Released"
+  },
+  {
+    id: 3,
+    name: "Sand UI",
+    category: "Misc/Others",
+    description: "A comprehensive UI/UX Design System for SandurTech.",
+    image: "/images/SandUI/SandUI-github-social-preview.png",
+    tags: ["Design System", "UI/UX"],
+    links: { 
+      code: "https://github.com/amogharajsandur/SandUI" 
+    },
+    featured: true,
+    status: "In-Development"
+  },
 ];
 
 export const categories = [

@@ -1,5 +1,5 @@
 @use "sass:color";
-@import 'variables';
+@use 'variables' as v;
 
 // Flexbox Center
 @mixin flex-center {
@@ -33,7 +33,7 @@
 }
 
 // Text Gradient Mixin
-@mixin text-gradient($gradient: $gradient-brand) {
+@mixin text-gradient($gradient: v.$gradient-brand) {
   background: $gradient;
   -webkit-background-clip: text;
   background-clip: text;
@@ -43,14 +43,14 @@
 // Global Card Styling
 @mixin project-card {
   background-color: var(--theme-surface);
-  border-radius: $border-radius;
+  border-radius: v.$border-radius;
   border: 1px solid var(--theme-border);
-  box-shadow: $shadow-sm;
-  transition: $transition;
+  box-shadow: v.$shadow-sm;
+  transition: v.$transition;
   
   &:hover {
-    border-color: $color-accent;
-    box-shadow: $shadow-md;
+    border-color: v.$color-accent;
+    box-shadow: v.$shadow-md;
     transform: translateY(-8px);
   }
 }

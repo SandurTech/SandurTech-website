@@ -42,7 +42,7 @@ export default function About() {
                   <span>EST.</span>
                 </div>
                 <div className={mainStyles.stat}>
-                  <h4>2</h4>
+                  <h4>3</h4>
                   <span>TOOLS BUILT</span>
                 </div>
                 <div className={mainStyles.stat}>
