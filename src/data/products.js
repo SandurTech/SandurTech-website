@@ -34,7 +34,8 @@ export const products = [
     image: "/images/SandUI/SandUI-github-social-preview.png",
     tags: ["Design System", "UI/UX"],
     links: { 
-      code: "https://github.com/amogharajsandur/SandUI" 
+      demo: "https://sandurtech.github.io/SandUI/",
+      code: "https://github.com/amogharajsandur/SandUI"
     },
     featured: true,
     status: "In-Development"
