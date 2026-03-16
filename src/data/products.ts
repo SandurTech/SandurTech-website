@@ -1,4 +1,21 @@
-export const products = [
+export interface ProductLinks {
+  demo?: string;
+  code?: string;
+}
+
+export interface Product {
+  id: number;
+  name: string;
+  category: string;
+  description: string;
+  image: string;
+  tags: string[];
+  links: ProductLinks;
+  featured: boolean;
+  status: 'Released' | 'In-Development' | 'Planned';
+}
+
+export const products: Product[] = [
   {
     id: 1,
     name: "Bulk Barcode Generator",
@@ -42,7 +59,7 @@ export const products = [
   },
 ];
 
-export const categories = [
+export const categories: string[] = [
   "All", 
   "Website/WebApp", 
   "Mobile App", 

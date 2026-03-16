@@ -227,39 +227,8 @@
     }
     </script>
 
-    <!-- 5. BreadcrumbList for Key Pages -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://sandurtech.vercel.app/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Products & Services",
-          "item": "https://sandurtech.vercel.app/products"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "About SandurTech",
-          "item": "https://sandurtech.vercel.app/about"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Blog",
-          "item": "https://sandurtech.vercel.app/blog"
-        }
-      ]
-    }
-    </script>
+    <!-- 5. BreadcrumbList removed (Now handled dynamically by React) -->
+
 
     <!-- Initial Theme Script to prevent flash of unstyled content -->
     <script>
@@ -279,6 +248,6 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     <div id="root"></div>
-    <script type="module" src="./src/Index.jsx"></script>
+    <script type="module" src="./src/Index.tsx"></script>
   </body>
 </html>

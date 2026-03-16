@@ -4,19 +4,45 @@ import { socials, companyLinks } from '../../data/socials';
 import { companyInfo } from '../../data/company';
 import SocialIcon from '../../components/SocialIcon';
 import EmailGuardian from '../../components/EmailGuardian';
+import SEO from '../../components/SEO';
 
 export default function About() {
   return (
     <div className={styles.aboutPage}>
+      <SEO 
+        title="About SandurTech" 
+        description="Learn more about SandurTech, its mission to build simple, accessible tools for humans, and the founder behind the solo venture."
+        canonical="/about"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sandurtech.vercel.app/" },
+              { "@type": "ListItem", "position": 2, "name": "About", "item": "https://sandurtech.vercel.app/about" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "mainEntity": {
+              "@type": "Person",
+              "name": "Amogha Raj Sandur",
+              "jobTitle": "Founder",
+              "description": companyInfo.description
+            }
+          }
+        ]}
+      />
       <section className={styles.hero}>
         <div className="container">
           <div className={styles.avatar}>
             <img 
               src="/images/SandurTech-Logo-PNG.png" 
-              alt="SandurTech Founder" 
+              alt="SandurTech Logo" 
               width="80" 
               height="80" 
-              fetchpriority="high"
+              fetchPriority="high"
               draggable="false" 
             />
           </div>
@@ -29,12 +55,8 @@ export default function About() {
         <div className="container">
           <div className={styles.grid}>
             <div className={styles.biography}>
-              {/* <div className={styles.badge}>Our Core Philosophy</div> */}
               <h2>Built for humans, <br/>by a human & AI.</h2>
               <p>{companyInfo.description}</p>
-              {/* <p>
-                Every tool I build starts with a simple "What if this was easier?" question. SandurTech isn't just a business; it's my personal contribution to the open-source and digital ecosystem, focusing on quality over corporate fluff.
-              </p> */}
               
               <div className={mainStyles.aboutStats} style={{ marginTop: '2.5rem' }}>
                 <div className={mainStyles.stat}>
@@ -49,14 +71,6 @@ export default function About() {
                   <h4>50+</h4>
                   <span>HOURS SPENT BUILDING</span>
                 </div>
-                {/* <div className={mainStyles.stat}>
-                  <h4>100%</h4>
-                  <span>Independent</span>
-                </div> */}
-                {/* <div className={mainStyles.stat}>
-                  <h4>0</h4>
-                  <span>Placeholders</span>
-                </div> */}
               </div>
               <div className={styles.card} style={{ marginTop: '2.5rem' }}>
                 <h3>Let's Chat</h3>

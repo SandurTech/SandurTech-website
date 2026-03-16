@@ -1,12 +1,13 @@
-import { useState } from 'react';
+import { useState, ChangeEvent } from 'react';
 import styles from './Products.module.scss';
 import mainStyles from '../Home/Home.module.scss';
 import { products, categories } from '../../data/products';
+import SEO from '../../components/SEO';
 
 export default function Products() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('All');
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [searchTerm, setSearchTerm] = useState<string>('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
 
   const filteredProducts = products.filter(product => {
     const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase());
@@ -14,8 +15,43 @@ export default function Products() {
     return matchesSearch && matchesCategory;
   });
 
+  const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
   return (
     <div className={styles.productsPage}>
+      <SEO 
+        title="Products & Services" 
+        description="Explore the full catalogue of SandurTech's niche tools, project templates, and design systems."
+        canonical="/products"
+        schema={[
+          {
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sandurtech.vercel.app/" },
+              { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://sandurtech.vercel.app/products" }
+            ]
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "SandurTech Products",
+            "itemListElement": products.map((p, i) => ({
+              "@type": "ListItem",
+              "position": i + 1,
+              "item": {
+                "@type": "Product",
+                "name": p.name,
+                "description": p.description,
+                "url": p.links.demo || p.links.code,
+                "image": `https://sandurtech.vercel.app${p.image}`
+              }
+            }))
+          }
+        ]}
+      />
       <section className={styles.hero}>
         <div className="container">
           <h1>Products & <span>Services</span></h1>
@@ -27,30 +63,39 @@ export default function Products() {
         <div className="container">
           <div className={styles.controlsRow}>
             <div className={styles.searchContainer}>
-              <span className="material-symbols-rounded">search</span>
+              <span className="material-symbols-rounded" aria-hidden="true">search</span>
               <input 
                 type="text" 
                 placeholder="Find a product..." 
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
+                onChange={handleSearchChange}
+                aria-label="Search products"
               />
             </div>
             
             <div className={styles.dropdownContainer}>
               <button 
+                id="category-dropdown-label"
                 className={styles.dropdownToggle}
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                 aria-haspopup="listbox"
                 aria-expanded={isDropdownOpen}
+                aria-controls="category-listbox"
+                aria-label={`Selected category: ${selectedCategory}. Click to change.`}
               >
                 <span>{selectedCategory}</span>
-                <span className="material-symbols-rounded">
+                <span className="material-symbols-rounded" aria-hidden="true">
                   {isDropdownOpen ? 'expand_less' : 'expand_more'}
                 </span>
               </button>
               
               {isDropdownOpen && (
-                <div className={styles.dropdownMenu} role="listbox">
+                <div 
+                  id="category-listbox"
+                  className={styles.dropdownMenu} 
+                  role="listbox" 
+                  aria-labelledby="category-dropdown-label"
+                >
                   {categories.map(cat => (
                     <button 
                       key={cat}

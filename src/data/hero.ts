@@ -1,4 +1,11 @@
-export const heroSlides = [
+export interface HeroSlide {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+}
+
+export const heroSlides: HeroSlide[] = [
   {
     id: 1,
     name: "Bulk Barcode Generator",

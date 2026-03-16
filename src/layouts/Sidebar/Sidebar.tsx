@@ -5,7 +5,12 @@ import { companyLinks } from "../../data/socials";
 import ThemeToggle from "../ThemeToggle";
 import SocialIcon from "../../components/SocialIcon";
 
-export default function Sidebar({ isOpen, onClose }) {
+interface SidebarProps {
+    isOpen: boolean;
+    onClose: () => void;
+}
+
+export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     return (
         <>
             <div 
@@ -13,7 +18,12 @@ export default function Sidebar({ isOpen, onClose }) {
                 onClick={onClose}
                 aria-hidden="true"
             ></div>
-            <aside className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}>
+            <aside 
+                className={`${styles.sidebar} ${isOpen ? styles.open : ''}`}
+                role="dialog"
+                aria-modal="true"
+                aria-label="Mobile Navigation"
+            >
                 <div className={styles.sidebarTop}>
                     <div className={styles.sidebarLogo}>
                         Sandur<strong>Tech</strong>

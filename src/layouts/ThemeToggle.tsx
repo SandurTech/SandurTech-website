@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react';
 
+type Theme = 'light' | 'dark';
+
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'));
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [theme, setTheme] = useState<Theme>(() => {
+    const savedTheme = localStorage.getItem('theme') as Theme | null;
+    if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  });
+  const [isAnimating, setIsAnimating] = useState<boolean>(false);
 
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);

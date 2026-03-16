@@ -26,7 +26,7 @@ function ScrollToTop() {
 }
 
 export default function App() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen);
 
@@ -42,10 +42,11 @@ export default function App() {
 
   return (
     <Router>
+      <a href="#main-content" className="skip-link">Skip to main content</a>
       <ScrollToTop />
       <Header onMenuClick={toggleSidebar} />
       <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
-      <main>
+      <main id="main-content">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={

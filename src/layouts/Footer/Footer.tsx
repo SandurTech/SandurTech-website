@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, MouseEvent } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
 import { companyLinks, socials } from "../../data/socials";
@@ -7,11 +7,11 @@ import SocialIcon from "../../components/SocialIcon";
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
-    const footerSocials = socials.filter(s => ['GitHub', 'LinkedIn'].includes(s.name));
-    const [emailShown, setEmailShown] = useState(false);
-    const [copied, setCopied] = useState(false);
+    const footerSocials = socials.filter(social => ['GitHub', 'LinkedIn'].includes(social.name));
+    const [emailShown, setEmailShown] = useState<boolean>(false);
+    const [copied, setCopied] = useState<boolean>(false);
 
-    const handleEmailAction = async (e) => {
+    const handleEmailAction = async (e: MouseEvent) => {
         if (!emailShown) {
             e.preventDefault();
             const challenge = window.confirm("Human Check: Unlock professional email?");

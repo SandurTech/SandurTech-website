@@ -1,4 +1,17 @@
-export const socials = [
+export interface Social {
+  name: string;
+  platform: string;
+  url: string;
+  color: string;
+}
+
+export interface CompanyLinks {
+  github: string;
+  googleBusiness: string;
+  email: string;
+}
+
+export const socials: Social[] = [
   { name: 'GitHub', platform: 'github', url: 'https://github.com/SandurTech', color: '#181717' },
   { name: 'LinkedIn', platform: 'linkedin', url: 'https://www.linkedin.com/in/amogharajsandur/', color: '#0077b5' },
   { name: 'Instagram', platform: 'instagram', url: 'https://www.instagram.com/amogharajsandur/', color: '#E4405F' },
@@ -8,8 +21,7 @@ export const socials = [
   { name: 'Portfolio', platform: 'globe', url: 'https://amogharajsandur.vercel.app/', color: '#FF9800' },
 ];
 
-export const companyLinks = {
-  // github: "https://github.com/amogharajsandur",
+export const companyLinks: CompanyLinks = {
   github: "https://github.com/SandurTech",
   googleBusiness: "https://g.page/r/Cfu4mEsl3obZEAI/review",
   email: "amogharaj.sandur@yahoo.com",

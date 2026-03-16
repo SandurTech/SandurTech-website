@@ -1,4 +1,14 @@
-export const companyInfo = {
+export interface CompanyInfo {
+  name: string;
+  fullName: string;
+  founded: string;
+  founder: string;
+  tagline: string;
+  description: string;
+  mission: string;
+}
+
+export const companyInfo: CompanyInfo = {
   name: "SandurTech",
   fullName: "Sandur Technologies",
   founded: "January 2026",

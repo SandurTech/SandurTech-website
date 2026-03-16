@@ -4,7 +4,11 @@ import ThemeToggle from "../ThemeToggle";
 import SocialIcon from "../../components/SocialIcon";
 import { companyLinks } from "../../data/socials";
 
-export default function Header({ onMenuClick }) {
+interface HeaderProps {
+    onMenuClick: () => void;
+}
+
+export default function Header({ onMenuClick }: HeaderProps) {
     const location = useLocation();
 
     return (
@@ -12,11 +16,11 @@ export default function Header({ onMenuClick }) {
             <div className={`container ${styles.container}`}>
                 <Link to="/" className={styles.logo}>
                     <img 
-                        src="/images/SandurTech-Logo-SVG.svg" 
+                        src="/images/SandurTech-Logo-PNG.png" 
                         alt="SandurTech Logo" 
-                        width="40" 
-                        height="40" 
-                        fetchpriority="high"
+                        width="45" 
+                        height="45" 
+                        fetchPriority="high"
                         draggable="false" 
                     />
                     <span>Sandur<strong>Tech</strong></span>

@@ -1,14 +1,18 @@
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from 'react';
 import styles from './EmailGuardian.module.scss';
 import SocialIcon from './SocialIcon';
 
-export default function EmailGuardian({ email }) {
-    const [isVerified, setIsVerified] = useState(false);
-    const [showChallenge, setShowChallenge] = useState(false);
-    const [copied, setCopied] = useState(false);
-    const [sliderValue, setSliderValue] = useState(0);
+interface EmailGuardianProps {
+    email: string;
+}
 
-    const handleSliderChange = (e) => {
+export default function EmailGuardian({ email }: EmailGuardianProps) {
+    const [isVerified, setIsVerified] = useState<boolean>(false);
+    const [showChallenge, setShowChallenge] = useState<boolean>(false);
+    const [copied, setCopied] = useState<boolean>(false);
+    const [sliderValue, setSliderValue] = useState<number>(0);
+
+    const handleSliderChange = (e: ChangeEvent<HTMLInputElement>) => {
         const val = parseInt(e.target.value);
         setSliderValue(val);
         if (val >= 100) {
@@ -17,7 +21,7 @@ export default function EmailGuardian({ email }) {
         }
     };
 
-    const handleAction = async (e) => {
+    const handleAction = async (e: FormEvent | React.MouseEvent) => {
         e.preventDefault();
         // Fallback for click logic
         try {

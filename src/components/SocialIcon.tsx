@@ -7,9 +7,15 @@ import {
   FaYoutube 
 } from 'react-icons/fa6';
 import { FiGlobe, FiMail } from 'react-icons/fi';
+import React from 'react';
 
-export default function SocialIcon({ platform, className }) {
-  const icons = {
+interface SocialIconProps {
+  platform: string;
+  className?: string;
+}
+
+export default function SocialIcon({ platform, className }: SocialIconProps): React.ReactElement {
+  const icons: Record<string, React.ReactElement> = {
     linkedin: <FaLinkedin className={className} aria-hidden="true" />,
     github: <FaGithub className={className} aria-hidden="true" />,
     instagram: <FaInstagram className={className} aria-hidden="true" />,
